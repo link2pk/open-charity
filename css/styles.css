@@ -20,9 +20,7 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  margin: 0; }
 
 /**
  * Add the correct display in IE 9-.
@@ -391,6 +389,24 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: 'Museo Sans';
+  src: local("Museo Sans 500"), local("MuseoSans-500"), url("../fonts/MuseoSans-500.woff2") format("woff2"), url("../fonts/MuseoSans-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Museo Sans';
+  src: local("Museo Sans 700"), local("MuseoSans-700"), url("../fonts/MuseoSans-700.woff2") format("woff2"), url("../fonts/MuseoSans-700.woff") format("woff");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Museo Sans';
+  src: local("Museo Sans 300"), local("MuseoSans-300"), url("../fonts/MuseoSans-300.woff2") format("woff2"), url("../fonts/MuseoSans-300.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
 /*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -472,6 +488,311 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.col {
+  padding: 15px; }
+
+.container {
+  margin: 0 auto; }
+
+.flex-grid {
+  display: flex; }
+
+.flex-grid .col {
+  flex: 1;
+  word-break: break-word; }
+
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between; }
+
+.flex-grid-thirds .col {
+  width: 32%; }
+
+@media (max-width: 400px) {
+  .flex-grid,
+  .flex-grid-thirds {
+    display: block; }
+    .flex-grid .col,
+    .flex-grid-thirds .col {
+      width: 100%;
+      margin: 0 0 10px 0; } }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1110px; } }
+
+.toggle,
+[id^=drop] {
+  display: none; }
+
+/* Giving a background-color to the .main-nav container. */
+.main-nav {
+  margin: 0;
+  padding: 0; }
+
+#logo {
+  display: block;
+  padding: 0 0px 0 15px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px; }
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+.main-nav:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+.main-nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  top: 12px; }
+
+/* Positioning the .main-navigation items inline */
+.main-nav ul li {
+  margin: 0px;
+  display: inline-block;
+  float: left; }
+
+/* Styling the links */
+.main-nav a {
+  display: block;
+  padding: 10px 15px;
+  color: #575656;
+  font: 500 14px "Museo Sans", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none; }
+
+.main-nav ul li ul li:hover {
+  background: #000000; }
+
+/* Background color change on Hover */
+.main-nav a:hover {
+  color: #000; }
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+.main-nav ul ul {
+  display: none;
+  position: absolute;
+  /* has to be the same number as the "line-height" of ".main-nav a" */
+  top: 60px; }
+
+/* Display Dropdowns on Hover */
+.main-nav ul li:hover > ul {
+  display: inherit; }
+
+/* Fisrt Tier Dropdown */
+.main-nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative; }
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+.main-nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  /* has to be the same number as the "width" of ".main-nav ul ul li" */
+  left: 170px; }
+
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after {
+  content: ' +'; }
+
+li > a:only-child:after {
+  content: ''; }
+
+/*nav hamburger icon css*/
+#nav-icon {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  -webkit-transform: scale(0.4);
+  -ms-transform: scale(0.4);
+  -o-transform: scale(0.4);
+  transform: scale(0.4); }
+  #nav-icon span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: #61C0BD;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out; }
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon span:nth-child(2) {
+  top: 18px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon span:nth-child(3) {
+  top: 36px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px; }
+
+#nav-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0; }
+
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 39px;
+  left: 8px; }
+
+/* Media Queries
+--------------------------------------------- */
+@media all and (max-width: 767px) {
+  #logo {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    float: none; }
+  .main-nav {
+    margin: 0; }
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle + a,
+  .menu {
+    display: none; }
+  .menu {
+    width: 100%; }
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    border: none;
+    position: absolute;
+    right: 8px;
+    top: 8px; }
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked + ul {
+    display: block; }
+  /* Change menu item's width to 100% */
+  .main-nav ul li {
+    display: block;
+    width: 100%; }
+  .main-nav ul ul .toggle,
+  .main-nav ul ul a {
+    padding: 0 40px; }
+  .main-nav ul ul ul a {
+    padding: 0 80px; }
+  .main-nav a:not(#logo):hover,
+  .main-nav ul ul ul a {
+    color: #61C0BD; }
+  .main-nav ul li ul li .toggle,
+  .main-nav ul ul a,
+  .main-nav ul ul ul a {
+    padding: 14px 20px;
+    color: #FFF;
+    font-size: 17px; }
+  .main-nav ul li ul li .toggle,
+  .main-nav ul ul a {
+    background-color: #212121; }
+  /* Hide Dropdowns by Default */
+  .main-nav ul ul {
+    float: none;
+    position: static;
+    color: #ffffff;
+    /* has to be the same number as the "line-height" of ".main-nav a" */ }
+  /* Hide menus on hover */
+  .main-nav ul ul li:hover > ul,
+  .main-nav ul li:hover > ul {
+    display: none; }
+  /* Fisrt Tier Dropdown */
+  .main-nav ul ul li {
+    display: block;
+    width: 100%; }
+  .main-nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of ".main-nav ul ul li" */ } }
+
+@media all and (max-width: 330px) {
+  .main-nav ul li {
+    display: block;
+    width: 94%; } }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px; }
+
+#logo > img {
+  max-width: 154px; }
+
+.hero {
+  background: #232326 url(../img/hero.jpg) center top no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center; }
+  .hero h1 {
+    text-transform: uppercase;
+    font-family: "Museo Sans", sans-serif; }
+
+@media (min-width: 768px) {
+  .hero p {
+    font-size: 17px; }
+  .hero .p2 {
+    font-size: 14px; } }
+
+@media (min-width: 1200px) {
+  .hero p {
+    font-size: 17px; }
+  .hero .p2 {
+    font-size: 14px; } }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

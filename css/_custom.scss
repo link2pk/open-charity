@@ -1,0 +1,46 @@
+body{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: $font-family-open-sans;
+	font-size: 14px;
+}
+
+#logo{
+	> img {
+		max-width: 154px;
+	}
+}
+
+.hero{
+	background:#232326 url(../img/hero.jpg) center top no-repeat;
+	background-size: cover;
+	color: #fff;
+	text-align: center;
+	h1{
+		text-transform: uppercase; 
+		font-family: $font-family-museo;
+	}
+	
+}
+
+
+@media (min-width:768px){
+	.hero {
+		p {
+			font-size: 17px;
+		}
+		.p2{
+			font-size: 14px;
+		}
+	}
+}
+@media (min-width:1200px){
+	.hero {
+		p {
+			font-size: 17px;
+		}
+		.p2{
+			font-size: 14px;
+		}
+	}
+}
