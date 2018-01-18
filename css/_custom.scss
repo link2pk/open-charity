@@ -1,46 +1,347 @@
-body{
+* {
+	box-sizing: border-box;
+}
+
+body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: $font-family-open-sans;
 	font-size: 14px;
+	font-weight: 400; 
 }
 
-#logo{
+a,
+button {
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+
+}
+a{
+	text-decoration: none;
+}
+.text-center {
+  text-align: center;
+}
+.d-none{
+	display: none;
+}
+
+.h3{
+	font: 500 20px $font-family-museo;
+	text-transform: uppercase;
+}
+.clearfix:after{    
+    clear: both;
+    content: "";
+    display: block;
+}
+
+
+@mixin btn {
+	height: 40px;
+	text-align: center;
+	border-radius: $btn-border-radius;
+	text-transform: uppercase;
+	font: 500 14px/40px $font-family-museo;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+@mixin link-btn {
+	color: $primary-green;
+	border: 1px solid;
+
+	@include btn;
+	&:hover {
+		background-color: $primary-green;
+		color: #fff;
+	}
+}
+
+%grey-bg {
+	background-color: $grey-bg;
+}
+
+%margin-lr-auto{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card-1-btn{
+	@include link-btn; 
+	display: inline-block;
+	max-width: 207px;
+	width: 100%;
+	
+}
+
+.btn-primary {
+
+	@include btn;
+	color: #fff;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: $primary-green;
+	border: 1px solid $btn-primary-border-color;
+	&:hover {
+		background-color: darken($primary-green, 10%);
+	}
+}
+
+#logo {
 	> img {
 		max-width: 154px;
 	}
 }
 
-.hero{
-	background:#232326 url(../img/hero.jpg) center top no-repeat;
+.hero {
+	background: #232326 url(../img/hero.jpg) center top no-repeat;
 	background-size: cover;
 	color: #fff;
 	text-align: center;
-	h1{
-		text-transform: uppercase; 
+	h1 {
+		text-transform: uppercase;
+		font-weight: normal;
+		font-family: 'Varela Round', sans-serif;
+		margin-bottom: 0.35em;
+	}
+
+}
+
+.next-event {
+	
+	@extend %grey-bg;
+	padding: 20px 0;
+
+}
+
+.next-event-text {
+	font-weight: 600;
+	color: $primary-black;
+	> span {
+		font-weight: 500;
 		font-family: $font-family-museo;
+		> span {
+			color: $primary-green;
+		}
+	}
+	+ p {
+		color: $secondary-black;
+		margin: 0;
+	}
+}
+
+
+.card-1{
+	max-width: 350px;
+	@extend %margin-lr-auto;
+	h6{
+		font: 500 17px $font-family-museo;
+		margin: 30px 0 15px;
+	}
+	> img{
+		max-width: 128px;
+		max-height: 108px;
+	}
+	p{
+		line-height: 23px;
 	}
 	
 }
 
-
-@media (min-width:768px){
-	.hero {
-		p {
-			font-size: 17px;
-		}
-		.p2{
-			font-size: 14px;
-		}
+.get-involved{
+	padding: 20px 0 4px;
+	text-align: center;
+	h6{
+		text-transform: uppercase;
 	}
 }
-@media (min-width:1200px){
+
+
+.our-mission{
+	@extend %grey-bg;
+	.card-1{
+		background-color: #fff;
+		padding: 21px;
+		
+		img{
+			max-width: 80px;
+		}
+	}
+	h6{
+		color: #5dc0c9;
+	} 
+}
+
+.our-members-slick{
+	img{
+		max-width: 148px;
+		max-height: 90px;
+		margin: 0 auto;
+	}
+}
+.blog{
+	.h3{
+		text-align: center;
+	}
+}
+.blog-card{
+	max-width: 260px;
+	@extend %margin-lr-auto;
+	color: $secondary-black;
+	h6{
+		font-size: 14px;
+		font-weight: 600;
+		color: $primary-green;
+		margin: 0;
+	}
+	div{
+		line-height: 23px;
+		border-top: 1px solid $grey-bg;
+		border-bottom: 1px solid $grey-bg;
+	}
+	p{
+		margin: 0;
+	}
+}
+
+.main-footer{
+	text-align: center;
+	background-color: $footer-bg;
+	a{
+		color: #5dc0c9;
+	}
+	p{
+		color: #979eb1;
+	}
+	
+}
+.social-network {
+	list-style-type: none;
+	li {
+		display: inline-block;
+	}
+}
+
+
+// Media Queries
+
+@media (min-width:576px) {
+	.next-event-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.btn-primary {
+			margin-left: 15px;
+		}
+	}
+	.card-1{
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+}
+
+@media (min-width:768px) {
+	
 	.hero {
 		p {
 			font-size: 17px;
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+
 		}
-		.p2{
+		.p2 {
 			font-size: 14px;
+
+		}
+	}
+	.join-us {
+		position: relative;
+		top: -2px;
+
+		a {
+			@include link-btn;
+			width: 108px;
+			padding: 0;
+
+		}
+	}
+	.main-nav ul li.join-us {
+		margin-left: 14px;
+	}
+	.next-event-text {
+
+		font-size: 17px;
+
+	}
+	.h3{
+		font-size: 26px;
+	}
+	.get-involved{
+	padding: 6px 0 0;
+	
+	
+}
+}
+
+@media (min-width:992px) {
+	.hero {
+		h1 {
+			font-size: 40px;
+		}
+		p {
+
+			line-height: 30px;
+		}
+		.p2 {
+			line-height: 22px;
+		}
+	}
+
+	.next-event {
+		padding: 0;
+	}
+	.next-event-content {
+		min-height: 115px;
+	}
+	.next-event-text {
+		margin-bottom: 6px;
+	}
+}
+
+@media (min-width:1200px) {
+	.logo {
+		line-height: 80px;
+		padding: 0;
+	}
+	.main-nav ul {
+		top: 22px;
+	}
+	.hero {
+		h1 {
+			font-size: 55px;
+		}
+		p {
+			font-size: 17px;
+		}
+		.p2 {
+			font-size: 14px;
+		}
+		padding: 17px 0 50px;
+	}
+
+}
+
+@media (max-width:575px) {
+	.next-event-content {
+		.btn-primary {
+			margin-top: 10px;
 		}
 	}
 }

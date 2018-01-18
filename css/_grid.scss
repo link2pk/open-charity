@@ -1,9 +1,11 @@
 .col {
   
-  padding: 15px;
+  padding: $spacer;
 }
 .container{
 	margin: 0 auto;
+	max-width: 90%;
+	position: relative;	
 }
 .flex-grid {
   display: flex;
@@ -11,16 +13,18 @@
 .flex-grid .col {
   flex: 1;
   word-break:break-word;
+	
 }
+
 .flex-grid-thirds {
   display: flex;
   justify-content: space-between;
 }
 .flex-grid-thirds .col {
-  width: 32%;
+  width: 33.33%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 767px) {
   .flex-grid,
   .flex-grid-thirds {
     display: block;

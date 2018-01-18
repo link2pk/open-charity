@@ -11,9 +11,9 @@
 	
 }
 
-#logo {
+.logo {
 	display: block;
-	padding: 0 0px 0 15px;
+	padding: 0;
 	float: left;
 	font-size:20px;
 	line-height: 60px;
@@ -36,7 +36,7 @@
 	margin:0;
 	list-style: none;
 	position: relative;
-	top: 12px;
+	
 	}
 	
 /* Positioning the .main-navigation items inline */
@@ -48,9 +48,9 @@
 	}
 
 /* Styling the links */
-.main-nav a {
+.menu a {
 	display:block;
-	padding:10px 15px;	
+	padding:10px 16px;	
 	color: $nav-link-color; 
 	font: 500 14px $font-family-museo;
 	text-transform: uppercase;
@@ -194,7 +194,7 @@ li > a:only-child:after { content: ''; }
 
 @media all and (max-width : 767px) {
 
-	#logo {
+	.logo {
 		display: block;
 		padding: 0;
 		width: 100%;
@@ -226,7 +226,7 @@ li > a:only-child:after { content: ''; }
 		text-decoration:none;
 		border:none;
 		position: absolute;
-		right: 8px;
+		right: 0;
 		top: 8px;
 	}
 
@@ -252,7 +252,7 @@ li > a:only-child:after { content: ''; }
 		padding: 0 80px;
 	}
 
-	.main-nav a:not(#logo):hover,
+	.main-nav a:not(.logo):hover,
  	.main-nav ul ul ul a {
 		//background-color: #000000;
 		color: $btn-join-us-color;
@@ -307,4 +307,13 @@ li > a:only-child:after { content: ''; }
 		width: 94%;
 	}
 
+}
+
+@media (min-width:768px) {
+	.main-nav{
+		
+		ul{
+			top: 12px;
+		}
+	}
 }

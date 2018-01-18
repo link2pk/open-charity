@@ -1,9 +1,22 @@
 //colors
 $nav-bg-color: #fff;
-$nav-link-color: #575656;
-$btn-join-us-color: #61C0BD;
-$primary-green: $btn-join-us-color;
+$primary-black: #575656;
+$nav-link-color: $primary-black;
+$secondary-black: #5b6172;
+$primary-green: #61C0BD;
+$grey-bg: #f2f2f2;
+$footer-bg: #45484d;
 
 //fonts
 $font-family-open-sans:   'Open Sans', sans-serif;
 $font-family-museo:   'Museo Sans', sans-serif;
+
+
+//spacer
+$spacer: 15px;
+
+
+//button styles
+$btn-border-radius: 1px;
+$btn-join-us-color: $primary-green;
+$btn-primary-border-color: #26bdb9;
