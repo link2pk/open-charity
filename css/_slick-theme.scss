@@ -12,15 +12,15 @@ $slick-font-path: "../fonts/" !default;
 $slick-font-family: "oc" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: $primary-green; 
-$slick-dot-color: black !default;
-$slick-dot-color-active: $slick-dot-color !default;
+$slick-dot-color: #989eac ;
+$slick-dot-color-active: $primary-green;
 $slick-prev-character: "\42" !default;
 $slick-next-character: "\43" !default;
 $slick-dot-character: "\2022" !default;
-$slick-dot-size: 6px !default;
+$slick-dot-size: 34px ;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
-$slick-opacity-not-active: 0.25 !default; 
+$slick-opacity-not-active: 1; 
  
 @function slick-image-url($url) {
     @if function-exists(image-url) {
@@ -65,8 +65,8 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
@@ -92,7 +92,7 @@ $slick-opacity-not-active: 0.25 !default;
     }
     &:before {
         font-family: $slick-font-family;
-        font-size: 20px;
+        font-size: 30px;
         line-height: 1;
         color: $slick-arrow-color;
         opacity: $slick-opacity-default;
@@ -102,7 +102,8 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-    left: -25px;
+	z-index: 100;
+    left: 0;
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -116,7 +117,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: -25px;
+    right: 0;
     [dir="rtl"] & {
         left: -25px;
         right: auto;
@@ -193,4 +194,38 @@ $slick-opacity-not-active: 0.25 !default;
         }
     }
 } 
+@media (min-width:768px){
+	.slick-prev,
+	.slick-next{
+		width: 48px;
+		height: 48px;
+		&:before{
+			font-size: 48px;
+		}
+	}
+	.slick-prev{
+		left: -10px;
+	}
+	.slick-next{
+		right: -10px;
+	}
+}
 
+@media (min-width:1200px){
+	
+	.slick-prev{
+		left: -38px;
+	}
+	.slick-next{
+		right: -38px;
+	}
+}
+@media (min-width:1240px){
+	
+	.slick-prev{
+		left: -42px;
+	}
+	.slick-next{
+		right: -42px;
+	}
+}

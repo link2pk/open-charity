@@ -7,7 +7,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-family: $font-family-open-sans;
 	font-size: 14px;
-	font-weight: 400; 
+	font-weight: 400;
+	color: $primary-black;
 }
 
 a,
@@ -17,24 +18,28 @@ button {
 	transition: all .3s ease;
 
 }
-a{
+
+a {
 	text-decoration: none;
 }
+
 .text-center {
-  text-align: center;
+	text-align: center;
 }
-.d-none{
+
+.d-none {
 	display: none;
 }
 
-.h3{
+.h3 {
 	font: 500 20px $font-family-museo;
 	text-transform: uppercase;
 }
-.clearfix:after{    
-    clear: both;
-    content: "";
-    display: block;
+
+.clearfix:after {
+	clear: both;
+	content: "";
+	display: block;
 }
 
 
@@ -63,17 +68,17 @@ a{
 	background-color: $grey-bg;
 }
 
-%margin-lr-auto{
+%margin-lr-auto {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.card-1-btn{
-	@include link-btn; 
+.card-1-btn {
+	@include link-btn;
 	display: inline-block;
 	max-width: 207px;
 	width: 100%;
-	
+
 }
 
 .btn-primary {
@@ -95,8 +100,13 @@ a{
 	}
 }
 
+.main-nav{
+	background-color: #fff;
+}
+
 .hero {
-	background: #232326 url(../img/hero.jpg) center top no-repeat;
+	background: #232326 url(../img/hero.jpg) fixed center top no-repeat;
+	
 	background-size: cover;
 	color: #fff;
 	text-align: center;
@@ -110,7 +120,7 @@ a{
 }
 
 .next-event {
-	
+
 	@extend %grey-bg;
 	padding: 20px 0;
 
@@ -118,7 +128,7 @@ a{
 
 .next-event-text {
 	font-weight: 600;
-	color: $primary-black;
+
 	> span {
 		font-weight: 500;
 		font-family: $font-family-museo;
@@ -133,100 +143,199 @@ a{
 }
 
 
-.card-1{
+.card-1 {
 	max-width: 350px;
 	@extend %margin-lr-auto;
-	h6{
+	h6 {
 		font: 500 17px $font-family-museo;
 		margin: 30px 0 15px;
 	}
-	> img{
+	> img {
 		max-width: 128px;
 		max-height: 108px;
 	}
-	p{
+	p {
 		line-height: 23px;
 	}
-	
+	.icon {
+		color: #fff;
+		background-color: #5ac0cf;
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+		border: 10px solid #fff;
+		border-radius: 50px;
+		font-size: 40px;
+		line-height: 2.2;
+		position: relative;
+		top: -70px;
+		-webkit-transition: color .5s ease;
+		-o-transition: color .5s ease;
+		transition: color .5s ease;
+	}
+
 }
 
-.get-involved{
-	padding: 20px 0 4px;
+.mission-content {
+	margin-top: -94px;
+}
+
+.get-involved {
+	padding: 20px 0;
 	text-align: center;
-	h6{
+	h6 {
 		text-transform: uppercase;
 	}
 }
 
 
-.our-mission{
+.our-mission {
 	@extend %grey-bg;
-	.card-1{
+	padding: 20px 0 40px;
+	.card-1 {
 		background-color: #fff;
 		padding: 21px;
-		
-		img{
+		border-radius: 5px;
+		margin-top: 50px;
+
+		img {
 			max-width: 80px;
 		}
+		&:hover {
+
+			.icon {
+				color: #5ac0cf;
+				border-color: #5ac0cf;
+				background-color: #fff;
+			}
+		}
 	}
-	h6{
+	h6 {
 		color: #5dc0c9;
-	} 
+	}
+	.p2 {
+		font: 500 15px $font-family-museo;
+	}
+
 }
 
-.our-members-slick{
-	img{
-		max-width: 148px;
-		max-height: 90px;
-		margin: 0 auto;
+.our-members-slick {
+	.slick-slide {
+		min-height: 110px;
 	}
+	img {
+
+		margin: 0 auto;
+
+		position: relative;
+		top: 55px;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+
+	}
+
 }
-.blog{
-	.h3{
+
+.cancer-research-log {
+	width: 138px;
+}
+
+.compucorp-logo {
+	width: 148px;
+}
+
+.kop-logo {
+	width: 105px;
+
+}
+
+.zing-logo {
+	width: 81px;
+}
+
+.comic-relief-logo {
+	width: 104px;
+}
+
+
+.blog {
+	padding: 8px 0 30px;
+	.h3 {
 		text-align: center;
 	}
 }
-.blog-card{
+
+.blog-card {
+	display: block;
 	max-width: 260px;
 	@extend %margin-lr-auto;
 	color: $secondary-black;
-	h6{
+	h6 {
 		font-size: 14px;
 		font-weight: 600;
 		color: $primary-green;
 		margin: 0;
 	}
-	div{
+	div {
 		line-height: 23px;
 		border-top: 1px solid $grey-bg;
 		border-bottom: 1px solid $grey-bg;
+		padding: 10px 0;
+		margin: 7px 0;
 	}
-	p{
+	p {
 		margin: 0;
 	}
 }
 
-.main-footer{
+
+.main-footer {
 	text-align: center;
 	background-color: $footer-bg;
-	a{
+	a {
 		color: #5dc0c9;
+		&:hover{
+			color: lighten(#5dc0c9, 20%);
+		}
 	}
-	p{
+	p {
 		color: #979eb1;
 	}
-	
+
 }
+
 .social-network {
 	list-style-type: none;
+	margin: 0;
+	padding: 14px 0;
+	border-bottom: 1px solid #585b61;
 	li {
 		display: inline-block;
+		+ li{
+			margin-left: 14px;
+		}
 	}
+	.icon{
+		
+	}
+	.icon-facebook{
+		font-size: 18px;
+	}
+	.icon-twitter{
+		font-size: 17px;
+	}
+	.icon-google-plus{
+		font-size: 23px;
+		position: relative;
+		top: 3px;
+	}
+	
 }
 
 
 // Media Queries
-
 @media (min-width:576px) {
 	.next-event-content {
 		display: flex;
@@ -236,18 +345,18 @@ a{
 			margin-left: 15px;
 		}
 	}
-	.card-1{
-	
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
-}
+	.card-1 {
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
 }
 
 @media (min-width:768px) {
-	
+
 	.hero {
 		p {
 			font-size: 17px;
@@ -280,14 +389,41 @@ a{
 		font-size: 17px;
 
 	}
-	.h3{
+	.h3 {
 		font-size: 26px;
 	}
-	.get-involved{
-	padding: 6px 0 0;
-	
-	
-}
+	.get-involved {
+		padding: 8px 0 24px;
+
+
+	}
+	.our-mission {
+		padding: 10px 0 26px;
+		.p2 {
+			font-size: 17px;
+			margin: 24px 0 30px;
+		}
+		.flex-grid-thirds {
+			.col {
+				padding-left: 0;
+				padding-right: 0;
+				+ .col {
+					margin-left: 30px;
+				}
+			}
+			padding-bottom : 85px;
+			margin-bottom: 44px;
+			border-bottom: 1px solid #d9dadd;
+
+		}
+	}
+	.mission-content {
+		margin-top: -140px;
+		min-height: 148px;
+	}
+	.blog {
+		padding: 2px 0 36px;
+	}
 }
 
 @media (min-width:992px) {
@@ -313,6 +449,14 @@ a{
 	.next-event-text {
 		margin-bottom: 6px;
 	}
+	.social-network{
+		padding: 22px 0;
+	}
+	.main-footer{
+		p{
+			margin: 20px 0;
+		}
+	}
 }
 
 @media (min-width:1200px) {
@@ -334,6 +478,18 @@ a{
 			font-size: 14px;
 		}
 		padding: 17px 0 50px;
+	}
+	.mission-content {
+
+		min-height: 124px;
+	}
+
+}
+
+@media (min-width:768px) and (max-width:880px) {
+	.mission-content {
+
+		min-height: 172px;
 	}
 
 }
